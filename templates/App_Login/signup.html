@@ -4,7 +4,7 @@
 {% block body_block %}
 {% if registered %}
 <div class="alert alert-success">
-    Account Created Successfully. <a href="">Login Here</a>
+    Account Created Successfully. <a href="{% url 'App_login:login' %}">Login Here</a>
 </div>
 <h2>Create New Account: </h2>
 {% else %}
@@ -12,7 +12,7 @@
     {{ form|crispy }}
     {% csrf_token %}
     <button type="submit" class="btn btn-success btn-sm">Sign Up</button>
-    <p>Already have an account? <a href="">Login Here</a></p>
+    <p>Already have an account? <a href="{% url 'App_login:login' %}">Login Here</a></p>
 </form>
 {% endif %}
 {% endblock %}
